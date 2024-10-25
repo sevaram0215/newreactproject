@@ -6,11 +6,11 @@ const FormFieldRenderer = ({ fieldArr = [], onChangeCb, formObj, options = [] })
     const _dropdownField = (field) => {
         return (
             <div className="card flex justify-content-center w-100">
-                {/* <FloatLabel> */}
+             
                 <Dropdown name={field.name} id={field.label} value={formObj?.[field.name] ?? ""} onChange={onChangeCb} options={field.options ?? options} optionLabel="name"
                     placeholder={field.placeholder} className="w-100" />
-                {/* <label htmlFor={field.label}>{field.label}</label> */}
-                {/* </FloatLabel> */}
+              
+               
             </div>
         )
     }  
