@@ -1,5 +1,8 @@
 import React, { useMemo, useState } from "react";
 import Formfildrnd from "./component/coman/Formfild/FormComan";
+import './App.css';
+// import { InputMask } from 'primereact/inputmask';
+        
 const FormFild = [
   {
     id: "A",
@@ -215,12 +218,62 @@ const FormFild = [
         code: "c",
         name: "other",
       },
+      
     ],
   },
+  
+
+  {
+    id: "L",
+    name:"L",
+    label:"Name:-",
+    type:"input",
+    placeholder:"enter your name"
+  }
+  ,
+  {
+    id: "M",
+    name:"M",
+    label:"Mobile no:-",
+    type:"number",
+    placeholder:"enter your mobile no"
+  }
+  ,
+  {
+    id: "N",
+    name:"N",
+    label:"DOB :-",
+    type:"calender",
+    placeholder:"enter your date of birth"
+  }
+  ,
+  {
+    id: "O",
+    name:"O",
+    label:"Select your gender",
+    type:"Radio",
+    placeholder:"",
+    options:[
+      {
+        value:"man",
+        label:"man"
+      },
+      {
+        value:"female",
+        label:"female"
+      },
+      {
+        value:"other",
+        label:"other"
+      }
+    ]
+  }
 ];
 
 console.log(FormFild);
+
 const ShowFormFieldValdation = () => {
+
   const [formObject, setFormObject] = useState(null);
 
   const HandleChange = (e) => {
@@ -232,7 +285,7 @@ const ShowFormFieldValdation = () => {
   const Form_fields = useMemo(() => {
     let Ff = [...FormFild];
     Ff.forEach((field) => {
-      if (!["A", "B", "C", "F", "I"].includes(field.name)) {
+      if (!["A", "B", "C", "F", "I","L","M","N", "O"].includes(field.name)) {
         field.type = "";
       }
     });
@@ -257,7 +310,7 @@ const ShowFormFieldValdation = () => {
   }, [formObject]);
 
   return (
-    <div className="p-4 " style={{ border: "solid red" }}>
+    <div className="p-2 " >
       {
         <Formfildrnd
           forFildArr={Form_fields}

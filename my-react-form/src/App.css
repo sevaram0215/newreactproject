@@ -1,0 +1,15 @@
+.form{
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+.select{
+    width: 100%;
+    /* border: 1px solid red; */
+   
+}
+.dropdown{
+    /* border: 1px solid yellowgreen; */
+    width: 100%;
+}
